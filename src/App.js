@@ -96,7 +96,7 @@ class App extends Component {
                         method: 'GET',
                         headers: myHeaders
                     };
-                    return fetch('http://localhost:8080/luas/' + id, myInit) //'http://localhost:8080/luas/' + id
+                    return fetch('http://37.187.53.213:8080/luas/' + id, myInit) //'http://localhost:8080/luas/' + id
                         .then(function (response) {
                             if (response.status !== 200) {
                                 console.log('Looks like there was a problem. Status Code: ' + response.status);
