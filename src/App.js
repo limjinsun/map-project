@@ -6,7 +6,6 @@ import AltWindow from './AltWindow'
 const stations = require('./stations.geojson');
 
 class App extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -20,7 +19,6 @@ class App extends Component {
     componentDidMount() {
         this.makeMap();
     };
-
 
     makeMap() {
         mapboxgl.accessToken = 'pk.eyJ1IjoicmJ3dHAiLCJhIjoiY2ppYnpramswMGkxODN4bDdscW83ZnR1aiJ9._1mJRHEve76MQVXN' +
@@ -89,9 +87,8 @@ class App extends Component {
                 var id = e.features[0].properties.Id
                 var Name = e.features[0].properties.Name
                 var getRealTimeData = () => {
-                    var myHeaders = new Headers();
-                    myHeaders.append('pragma', 'no-cache');
-                    myHeaders.append('cache-control', 'no-cache');
+                    var httpHeaders = { 'Content-Type' : 'application/json', 'pragma' : 'no-cache', 'cache-control' : 'no-cache' };
+                    var myHeaders = new Headers(httpHeaders);
                     var myInit = {
                         method: 'GET',
                         headers: myHeaders
