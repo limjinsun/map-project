@@ -1,7 +1,10 @@
 ## Realtime Dublin Luas API Due time application with MapBox using React
 
 This project was built to deliver Realtime information of each luas station in Dublin. React framework used for the frontend along with Mapbox. I had to make my own Json friendly api for getting realtime Luas information since It was not exist.
-[https://wiki.liffeyireland.com:8443/Luas/21](api example)
+[api example](https://wiki.liffeyireland.com:8443/Luas/21)
+
+![screenshot1](./pics/a.png "s1")
+![screenshot2](./pics/b.png "s2")
 
 © Jin Lim
 
@@ -9,10 +12,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
-[screenshot1](./pics/a.png "s1")
-[screenshot2](./pics/b.png "s2")
-
 
 ## Folder Structure
 
