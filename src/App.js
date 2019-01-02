@@ -19,14 +19,14 @@ class App extends Component {
     componentDidMount() {
         this.makeMap();
     };
-
+s
     makeMap() {
         mapboxgl.accessToken = 'pk.eyJ1IjoicmJ3dHAiLCJhIjoiY2ppYnpramswMGkxODN4bDdscW83ZnR1aiJ9._1mJRHEve76MQVXN' +
             'xfUzjQ'
 
         const map = new mapboxgl.Map({
             container: this.container, style: 'mapbox://styles/rbwtp/cjiw1va1l70xv2rnvxxhr8eza',
-            // ice craeam - 'mapbox://styles/rbwtp/cjiw1loev703z2rno0tej40ou', 
+            // ice craeam - 'mapbox://styles/rbwtp/cjiw1loev703z2rno0tej40ou',
             // dark- 'mapbox://styles/rbwtp/cjiup82w804pw2so3pn4l19t0',
             // 'mapbox://styles/rbwtp/cjiw1va1l70xv2rnvxxhr8eza'
             center: [
@@ -74,7 +74,7 @@ class App extends Component {
                         .Popup()
                         .setLngLat(feature.geometry.coordinates)
                         .setHTML('<div id=\'popup\' class=\'popup\' style=\'z-index: 10;\'><ul class=\'list-group' +
-                            '\'><li class=\'list-group-item\'>' + feature.properties['Name'] + ' </li>' + 
+                            '\'><li class=\'list-group-item\'>' + feature.properties['Name'] + ' </li>' +
                             '<li class=\'list-group-item\'><a href="https://maps.google.com/maps?daddr=' + feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] + '" target="_blank"> ' + 'Open here in Google Map' + '</a>' +
                             '</li></ul></div>')
                         .addTo(map)
@@ -104,9 +104,9 @@ class App extends Component {
                                 .then((data) => {
                                     data.forEach((element) => {
                                         if(element.Direction === "Inbound"){
-                                            tramInbound = tramInbound + '<li class=\'list-group-item\'>' + element.Destination + ' - DueTime : ' + element.DueTime + '</li>'   
+                                            tramInbound = tramInbound + '<li class=\'list-group-item\'>' + element.Destination + ' - DueTime : ' + element.DueTime + '</li>'
                                         } else if (element.Direction === "Outbound") {
-                                            tramOutbound = tramOutbound + '<li class=\'list-group-item\'>' + element.Destination + ' - DueTime : ' + element.DueTime + '</li>'   
+                                            tramOutbound = tramOutbound + '<li class=\'list-group-item\'>' + element.Destination + ' - DueTime : ' + element.DueTime + '</li>'
                                         }
                                     })
                                     /**
