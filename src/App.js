@@ -87,6 +87,9 @@ s
                 var id = e.features[0].properties.Id
                 var Name = e.features[0].properties.Name
                 var getRealTimeData = () => {
+
+                    var that = this
+
                     var httpHeaders = { 'Content-Type' : 'application/json', 'pragma' : 'no-cache', 'cache-control' : 'no-cache' };
                     var myHeaders = new Headers(httpHeaders);
                     var myInit = {
@@ -109,6 +112,7 @@ s
                                             tramOutbound = tramOutbound + '<li class=\'list-group-item\'>' + element.Destination + ' - DueTime : ' + element.DueTime + '</li>'
                                         }
                                     })
+                                    that.setState({ stationId: id, tramInbound: tramInbound, tramOutbound: tramOutbound, stationName: Name });
                                     /**
                                      *  It didn't work. why??
                                      *  for (element in data) {
@@ -123,7 +127,13 @@ s
                 }
                 var asyncCall = async () => {
                     await getRealTimeData().then(() => {
-                        this.setState({ stationId: id, tramInbound: tramInbound, tramOutbound: tramOutbound, stationName: Name });
+                        // this is not working.
+                        // found workaround.
+                        // https://stackoverflow.com/questions/54582827/await-doesnt-wait-for-the-function-to-end
+                        // https://stackoverflow.com/questions/43539989/fetch-return-promise-state-pending#43540056
+                        // solution - https://stackoverflow.com/a/49684705/4735043
+
+                        // this.setState({ stationId: id, tramInbound: tramInbound, tramOutbound: tramOutbound, stationName: Name });
                     });
                     // set-state for additional component.
                 }
